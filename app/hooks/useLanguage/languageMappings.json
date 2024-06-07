@@ -1,0 +1,22 @@
+{
+  "en": {
+    "name": "English",
+    "acceptLanguage": "en"
+  },
+  "ar": {
+    "name": "العربية",
+    "acceptLanguage": "ar"
+  },
+  "tr": {
+    "name": "Türkçe",
+    "acceptLanguage": "tr"
+  },
+  "prs": {
+    "name": "دری",
+    "acceptLanguage": "prs"
+  },
+  "pus": {
+    "name": "پښتو",
+    "acceptLanguage": "pus"
+  }
+}

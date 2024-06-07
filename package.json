@@ -1,0 +1,121 @@
+{
+  "name": "Hera",
+  "version": "1.2.3",
+  "private": true,
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "export NODE_OPTIONS=--openssl-legacy-provider && react-native start",
+    "test": "jest",
+    "lint": "eslint . --fix",
+    "prepare": "husky install",
+    "format": "prettier . --write"
+  },
+  "dependencies": {
+    "@babel/plugin-transform-react-jsx": "^7.20.7",
+    "@heap/react-native-heap": "^0.19.0",
+    "@invertase/react-native-apple-authentication": "^2.2.2",
+    "@react-native-async-storage/async-storage": "^1.17.12",
+    "@react-native-community/checkbox": "^0.5.8",
+    "@react-native-community/datetimepicker": "^3.5.2",
+    "@react-native-community/geolocation": "^2.0.2",
+    "@react-native-firebase/app": "^13.0.1",
+    "@react-native-firebase/auth": "13",
+    "@react-native-firebase/crashlytics": "^13.0.1",
+    "@react-native-google-signin/google-signin": "^10.0.1",
+    "@react-native-picker/picker": "^2.1.0",
+    "@react-native-voice/voice": "^3.2.4",
+    "@sentry/react-native": "^4.12.0",
+    "axios": "^0.27.1",
+    "babel-plugin-module-resolver": "^5.0.0",
+    "date-fns": "^2.28.0",
+    "google-spreadsheet": "^3.2.0",
+    "i18next": "^21.6.3",
+    "react": "17.0.2",
+    "react-i18next": "^11.15.1",
+    "react-native": "0.65.1",
+    "react-native-app-intro-slider": "^4.0.4",
+    "react-native-calendars": "^1.1268.0",
+    "react-native-config": "^1.4.5",
+    "react-native-country-picker-modal": "^2.0.0",
+    "react-native-device-country": "^1.0.2",
+    "react-native-dotenv": "^3.4.8",
+    "react-native-elements": "^3.4.2",
+    "react-native-fbsdk-next": "^10.1.0",
+    "react-native-gesture-handler": "^1.10.3",
+    "react-native-get-random-values": "^1.9.0",
+    "react-native-image-picker": "5.6.1",
+    "react-native-keyboard-aware-scroll-view": "^0.9.5",
+    "react-native-localize": "^2.1.7",
+    "react-native-maps": "0.29.4",
+    "react-native-modal": "^13.0.0",
+    "react-native-modal-datetime-picker": "^11.0.0",
+    "react-native-onesignal": "4.5.1",
+    "react-native-permissions": "^3.1.0",
+    "react-native-restart": "0.0.23",
+    "react-native-safe-area-context": "^3.3.2",
+    "react-native-screens": "^3.7.2",
+    "react-native-sound": "^0.11.2",
+    "react-native-toast-message": "^2.0.2",
+    "react-native-vector-icons": "^8.1.0",
+    "react-native-webview": "11.23.1",
+    "react-navigation": "^4.4.4",
+    "react-navigation-stack": "^2.10.4",
+    "react-redux": "^7.2.6",
+    "redux-api-middleware": "^3.2.1",
+    "redux-persist": "^6.0.0",
+    "redux-saga": "^1.2.2",
+    "redux-thunk": "^2.4.0",
+    "reduxsauce": "^1.2.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/runtime": "^7.15.4",
+    "@react-native-community/eslint-config": "^3.0.1",
+    "axios-mock-adapter": "^1.21.2",
+    "babel-jest": "^27.2.1",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.4.0",
+    "husky": ">=6",
+    "jest": "^27.2.1",
+    "lint-staged": ">=10",
+    "metro-react-native-babel-preset": "^0.76.0",
+    "prettier": "2.8.7",
+    "react-native-codegen": "^0.0.7",
+    "react-test-renderer": "17.0.2",
+    "typescript": "^4.9.3"
+  },
+  "jest": {
+    "preset": "react-native"
+  },
+  "compilerOptions": {
+    "baseUrl": "",
+    "paths": {
+      "@components/*": [
+        "app/components/*"
+      ],
+      "@sagas/*": [
+        "app/sagas/*"
+      ],
+      "@screens/*": [
+        "app/screens/*"
+      ],
+      "@services/*": [
+        "app/services/*"
+      ],
+      "@stores/*": [
+        "app/stores/*"
+      ]
+    }
+  },
+  "lint-staged": {
+    "*.js": "eslint . --fix",
+    "*.{css,md,html,json}": "prettier . --write"
+  }
+}
