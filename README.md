@@ -6,7 +6,7 @@ Welcome to the HERA Mobile App repository! HERA is dedicated to connecting refug
 
 HERA’s mission is to support vulnerable populations, particularly refugees, by increasing access to vital healthcare services. As part of this mission, HERA focuses on preventive healthcare, with an initial goal to improve prenatal care and vaccination rates among refugees. This project began by addressing critical healthcare needs among Syrian refugees in Turkey, and HERA plans to extend support to refugees globally.
 
-Our technology stack includes a React Native mobile app, a React.js and Django web backend with robust APIs, and an admin panel, all of which can be adapted by organizations to provide tailored healthcare solutions.
+Our technology stack includes a React Native mobile app and [Django web backend](https://github.com/Hera-Digital-Health-Open-Source/herabackend) with robust APIs, and an admin panel, all of which can be adapted by organizations to provide tailored healthcare solutions.
 
 ## Features
 - **Mobile Health Platform**: Connects refugees with available healthcare services.
@@ -30,20 +30,23 @@ To set up the HERA Mobile App locally, follow these steps:
    cd hera-mobile-app
    ```
 
-2. **Install dependencies**:
+2. **Install dependencies** (we recommend using Yarn):
    ```bash
-   npm install
+    yarn install
    ```
+> **Note**: If you don’t have Yarn installed, you can enable it using Node.js's `corepack`:
 
-3. **Run the app**:
-   - For iOS: 
-     ```bash
-     npx react-native run-ios
-     ```
-   - For Android:
-     ```bash
-     npx react-native run-android
-     ```
+```bash
+    corepack enable
+```
+Alternatively, you can install Yarn with Homebrew:
+
+```bash
+    brew install yarn
+```
+> **Tip**: If you switch to Yarn from NPM, it's best to delete `package-lock.json` to avoid conflicts. Yarn will create its own `yarn.lock` file.
+
+3. Set up the environment variables: Copy the `.env` file into the project root (`heramobileapp`). If you don’t have this file, please ask another developer on the project for access.
 
 ## Contributing
 We welcome contributions from everyone! Please check out our Contributing Guide for instructions on how to get involved. We also encourage you to read our [Code of Conduct](CODE_OF_CONDUCT.md) to ensure a positive experience for all contributors.
