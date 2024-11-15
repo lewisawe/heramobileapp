@@ -18,7 +18,7 @@ Our technology stack includes a React Native mobile app and [Django web backend]
 To set up the HERA Mobile App locally, follow these steps:
 
 ### Prerequisites
-- [Node.js](https://nodejs.org/en/download/) (version 16.0 or higher)
+- [Node.js](https://nodejs.org/en/download/) (version 16.20.2)
 - [npm](https://www.npmjs.com/get-npm) or [yarn](https://yarnpkg.com/getting-started/install)
 - [Android Studio](https://developer.android.com/studio) (for Android development) or [Xcode](https://developer.apple.com/xcode/) (for iOS development)
 
