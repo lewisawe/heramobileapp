@@ -12,41 +12,134 @@ Our technology stack includes a React Native mobile app and [Django web backend]
 - **Mobile Health Platform**: Connects refugees with available healthcare services.
 - **Customizable Solution**: Open-source codebase that NGOs and organizations can adapt to specific regions and needs.
 - **Focus on Maternal and Child Health**: Prioritizes prenatal care and childhood vaccinations.
-  
+
 ## Getting Started
 
 To set up the HERA Mobile App locally, follow these steps:
 
 ### Prerequisites
 - [Node.js](https://nodejs.org/en/download/) (version 16.20.2)
-- [npm](https://www.npmjs.com/get-npm) or [yarn](https://yarnpkg.com/getting-started/install)
-- [Android Studio](https://developer.android.com/studio) (for Android development) or [Xcode](https://developer.apple.com/xcode/) (for iOS development)
+- [Yarn](https://yarnpkg.com/getting-started/install)
+- [CocoaPods](https://cocoapods.org) (for iOS development)
 
 ### Installation
 
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/Hera-Digital-Health-Open-Source/heramobileapp.git
-   cd hera-mobile-app
+   cd heramobileapp
    ```
 
-2. **Install dependencies** (we recommend using Yarn):
+2. **Install dependencies** (Yarn is recommended):
    ```bash
-    yarn install
+   yarn install
    ```
-> **Note**: If you don’t have Yarn installed, you can enable it using Node.js's `corepack`:
 
-```bash
-    corepack enable
-```
-Alternatively, you can install Yarn with Homebrew:
+   > **Note**: If you don’t have Yarn installed, enable it with Node.js’s `corepack`:
+   > ```bash
+   > corepack enable
+   > ```
+   > Alternatively, you can install Yarn using Homebrew:
+   > ```bash
+   > brew install yarn
+   > ```
+   > **Tip**: If you switch to Yarn from npm, delete the `package-lock.json` file to avoid conflicts. Yarn will generate a `yarn.lock` file.
 
-```bash
-    brew install yarn
-```
-> **Tip**: If you switch to Yarn from NPM, it's best to delete `package-lock.json` to avoid conflicts. Yarn will create its own `yarn.lock` file.
+3. **Set up environment variables**:  
+   Copy the `.env` file to the project root (`heramobileapp`). If you don’t have the `.env` file, ask another team member for access.
 
-3. Set up the environment variables: Copy the `.env` file into the project root (`heramobileapp`). If you don’t have this file, please ask another developer on the project for access.
+
+### iOS Setup
+
+#### Installing Pods
+
+1. Navigate to the `ios` folder:
+   ```bash
+   cd ios
+   ```
+
+2. Run CocoaPods to install dependencies:
+   ```bash
+   pod install
+   ```
+
+   > **Tip**: If the installation fails or times out, run the command with the `--verbose` flag for more details:
+   > ```bash
+   > pod install --verbose
+   > ```
+
+3. If CocoaPods isn’t installed, use Homebrew to install it:
+   ```bash
+   brew install cocoapods
+   ```
+
+   > **Note**: If you encounter a timeout during pod installation, rerun the `pod install --verbose` command. It caches previous downloads, so the process doesn’t start from scratch.
+
+4. Fix potential `xcrun` SDK errors:
+   - Open Xcode.
+   - Go to **Settings > Locations**.
+   - Ensure a valid **Command Line Tools** version is selected (re-select it if needed).
+
+![Xcode Settings](https://github.com/user-attachments/assets/38b376ac-200a-4f1f-9f7c-606da5d3ff3b)
+
+![Xcode Settings - Command Line Tools](https://github.com/user-attachments/assets/88bfd16a-ce92-4261-b4b3-0aa66fe1a69a)
+[Reference](https://stackoverflow.com/a/68579858)
+
+#### Building and Running on iOS Simulator
+
+1. Go to the root directory:
+   ```bash
+   cd ..
+   ```
+
+2. Build and run the app:
+   ```bash
+   npm run ios
+   ```
+
+#### Troubleshooting iOS Builds
+
+1. **Rosetta Installation** (for M1/M2 Macs):  
+   If you encounter compatibility issues, install Rosetta:
+   ```bash
+   softwareupdate --install-rosetta
+   ```
+
+2. **Yoga Compile Error**:
+   - Delete the `Pods` folder and `Podfile.lock`:
+     ```bash
+     rm -rf ios/Pods ios/Podfile.lock
+     ```
+   - Reinstall pods:
+     ```bash
+     cd ios
+     pod install
+     cd ..
+     ```
+   - If the error persists, edit the `Yoga.cpp` file:
+     - Path: `node_modules/react-native/ReactCommon/yoga/yoga/Yoga.cpp`
+     - Replace the single pipe (`|`) with double pipes (`||`) at lines 3008 and 2232.
+     - [Reference](https://stackoverflow.com/a/75949937)
+
+3. **Sentry Build Error**:  
+   If you encounter an auth token issue:
+   - Create a new auth token [here](https://hera-inc.sentry.io/settings/auth-tokens/).
+   - Update the `sentry.properties` file in the `ios` folder with the new token.
+   - [Reference](https://lightrun.com/answers/getsentry-sentry-react-native-build-fails-on-phasescriptexecution).
+
+
+### Android Setup
+
+1. Follow the Android Studio setup guide from the official [React Native documentation](https://reactnative.dev/docs/environment-setup).
+2. From the project root directory, build and run the app:
+   ```bash
+   npm run android
+   ```
+
+
+### Notes
+- Warnings during pod installation or builds (e.g., dependency mismatches or `ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES` settings) can usually be ignored unless they cause actual issues.
+- Always ensure your development environment matches the project’s prerequisites to avoid unnecessary errors.
 
 ## Contributing
 We welcome contributions from everyone! Please check out our Contributing Guide for instructions on how to get involved. We also encourage you to read our [Code of Conduct](CODE_OF_CONDUCT.md) to ensure a positive experience for all contributors.
