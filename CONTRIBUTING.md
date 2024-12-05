@@ -90,7 +90,7 @@ Please write tests for new features or bug fixes where applicable. Run all tests
 ## Need Help?
 
 If you have any questions or need guidance:
-- Reach out in the [Telegram Community Channel](tel-link).
+- Reach out in the [Telegram Community Channel](https://t.me/+NbEei69npAs1ZmM1).
 
 You can also reach out any of the following project maintainers:
 - [Su Yuen](https://github.com/suyuen)
