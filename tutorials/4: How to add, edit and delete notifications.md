@@ -1,4 +1,4 @@
-# How to add, edit and delete notifications
+# 4: How to add, edit and delete notifications
 
 #### Navigate to the right-hand side and select the **"Events" tab**. Within this tab, you will find three options: "Instant Notifications," "Notification Schedules," and "Notification Types."
 

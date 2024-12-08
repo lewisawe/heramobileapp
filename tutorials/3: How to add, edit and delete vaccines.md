@@ -1,6 +1,10 @@
-#
+# 3: How to add, edit and delete vaccines
+
+## The pregnancy and Child health tab, click vaccines
 
 ![Enter image alt description](Images/yA8_Image_1.png)
+
+## The next page will give you all the available vaccines in the app
 
 ![Enter image alt description](Images/9rw_Image_2.png)
 
